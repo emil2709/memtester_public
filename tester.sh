@@ -8,13 +8,13 @@ arr=(
 	80mb	
 )
 
-for x in {1..25}
+for x in {1..100}
 do
 	for i in "${arr[@]}";
 	do
 		/usr/bin/time -p sh -c 'taskset -c 0 '$i'/a.out & taskset -c 0 '$i'/b.out'  |& awk 'FNR == 1{print $2}' >> memtester.txt
 		echo "$i" >> memtester.txt
 		echo "$1" >> memtester.txt
-		sleep 2
+		sleep 200
 	done
 done
