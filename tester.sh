@@ -8,7 +8,7 @@ arr=(
 	80mb	
 )
 
-for x in {1..1440}
+for x in {1..288}
 do
 	for i in "${arr[@]}";
 	do
